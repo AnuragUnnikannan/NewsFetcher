@@ -26,7 +26,8 @@ public class NewsFeedController {
         {
             query = topic;
         }
-        String target="https://newsapi.org/v2/everything?q="+query+"&pageSize=50&apiKey=2fbfbc294434437e8818f71739b32d00";
+        String apiKey = ""; //put key here
+        String target="https://newsapi.org/v2/everything?q="+query+"&pageSize=50&apiKey="+apiKey;
         NewsFetcher news=new NewsFetcher();
         JSONObject feed=news.fetcher(target);
         JSONArray articles=(JSONArray) feed.get("articles");
